@@ -26,8 +26,8 @@ function computerPlay() {
 // Compare two results
 // If result is: Player has Rock & Computer has Paper = console.log()Computer wins
 // 
-playerSelection = prompt('Choose you weapon: ', 'rock');
-computerSelection = computerPlay();
+let playerSelection = prompt('Choose you weapon: ', 'Rock');
+let computerSelection = computerPlay();
 let winner = '';
 
 
