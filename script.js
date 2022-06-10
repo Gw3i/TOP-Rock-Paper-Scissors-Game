@@ -60,7 +60,7 @@ function playRound(playerSelection, computerSelection) {
         winner = 'It\'s a tie! Try again!';
     }
 
-    
+
     return winner;
 }
 
