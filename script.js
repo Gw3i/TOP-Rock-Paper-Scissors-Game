@@ -28,46 +28,49 @@ function computerPlay() {
 // 
 let playerSelection = prompt('Choose you weapon: ', 'Rock');
 let computerSelection = computerPlay();
-let point = '';
+let winnerText = '';
 
 
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
-        point = 'You lose! Paper beats Rock.';
+        winnerText = 'You lose!';
+        computerScore++;
     }
     else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
-        point = 'You won, Congrats!';
+        winnerText = 'You won, Congrats!';
+        playerScore++;
     } else if (computerSelection == 'Paper' && playerSelection == 'Paper') {
-        point = 'It\'s a tie! Try again!';
+        winnerText = 'It\'s a tie!';
     }
 
     else if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
-        point = 'You lose! Rock beats Scissors.';
+        winnerText = 'You lose!';
+        computerScore++;
     }
     else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
-        point = 'You won, Congrats!';
+        winnerText = 'You won, Congrats!';
+        playerScore++;
     } else if (computerSelection == 'Rock' && playerSelection == 'Rock') {
-        point = 'It\'s a tie! Try again!';
+        winnerText = 'It\'s a tie!';
     }
 
 
     else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
-        point = 'You lose! Scissors beat Paper.';
+        winnerText = 'You lose!';
+        computerScore++;
     }
     else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
-        point = 'You won, Congrats!';
+        winnerText = 'You won, Congrats!';
+        playerScore++;
     } else if (computerSelection == 'Scissors' && playerSelection == 'Scissors') {
-        point = 'It\'s a tie! Try again!';
+        winnerText = 'It\'s a tie!';
     }
-
-
-    return point;
 }
 
 console.log(playRound(playerSelection, computerSelection));
 
 
-// Create function game() & put playRound inside & play 5 times
+// Create function game() put playRound inside & play 5 times
 // Keep score and report a winner at the end
 // Use for loop 
 //for (let i = 0; i < 5; i++) {
@@ -82,6 +85,14 @@ let computerScore = 0;
 function game() {
 
     for (i = 0; i < 5; i++) {
-
+        if (winnerText == 'You won, Congrats!') {
+            playerScore++;
+            i++;
+        } else if (winnerText = 'You lose!') {
+            computerScore++;
+            i++;
+        } else if (winnerText = 'It\'s a tie!';) {
+            i++;
+        }
     }
 }
