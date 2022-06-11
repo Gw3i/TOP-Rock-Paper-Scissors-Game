@@ -34,22 +34,18 @@ let winnerText = '';
 function playRound(playerSelection, computerSelection) {
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
         winnerText = 'You lose!';
-        computerScore++;
     }
     else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
         winnerText = 'You won, Congrats!';
-        playerScore++;
     } else if (computerSelection == 'Paper' && playerSelection == 'Paper') {
         winnerText = 'It\'s a tie!';
     }
 
     else if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
         winnerText = 'You lose!';
-        computerScore++;
     }
     else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
         winnerText = 'You won, Congrats!';
-        playerScore++;
     } else if (computerSelection == 'Rock' && playerSelection == 'Rock') {
         winnerText = 'It\'s a tie!';
     }
@@ -57,14 +53,14 @@ function playRound(playerSelection, computerSelection) {
 
     else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
         winnerText = 'You lose!';
-        computerScore++;
     }
     else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
         winnerText = 'You won, Congrats!';
-        playerScore++;
     } else if (computerSelection == 'Scissors' && playerSelection == 'Scissors') {
         winnerText = 'It\'s a tie!';
     }
+
+    return winnerText;
 }
 
 console.log(playRound(playerSelection, computerSelection));
@@ -81,8 +77,9 @@ console.log(playRound(playerSelection, computerSelection));
 
 let playerScore = 0;
 let computerScore = 0;
+let winner = '';
 
-function game() {
+function game(winner) {
 
     for (i = 0; i < 5; i++) {
         if (winnerText == 'You won, Congrats!') {
@@ -91,8 +88,19 @@ function game() {
         } else if (winnerText = 'You lose!') {
             computerScore++;
             i++;
-        } else if (winnerText = 'It\'s a tie!';) {
+        } else if (winnerText = 'It\'s a tie!') {
             i++;
         }
     }
+
+
+    if (playerScore > computerScore) {
+        winner = 'You are the winner!'
+    } else {
+        winner = 'Computer is the winner!'
+    }
+
+    return winner;
 }
+
+console.log(game(winner))
