@@ -5,10 +5,9 @@ function computerPlay() {
     if (result <= 33) {
         result = 'Rock';
     }
-    else if (result > 34 && result <= 66) {
+    if (result > 34 && result <= 66) {
         result = 'Paper'
-    }
-    else {
+    } else {
         result = 'Scissors';
     }
     return result;
@@ -35,35 +34,35 @@ function playRound(playerSelection, computerSelection) {
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
         winnerText = 'You lose!';
     }
-    else if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
+    if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
         winnerText = 'You won, Congrats!';
-    } else if (computerSelection == 'Paper' && playerSelection == 'Paper') {
+    } if (computerSelection == 'Paper' && playerSelection == 'Paper') {
         winnerText = 'It\'s a tie!';
     }
 
-    else if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
+    if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
         winnerText = 'You lose!';
     }
-    else if (computerSelection == 'Rock' && playerSelection == 'Paper') {
+    if (computerSelection == 'Rock' && playerSelection == 'Paper') {
         winnerText = 'You won, Congrats!';
-    } else if (computerSelection == 'Rock' && playerSelection == 'Rock') {
+    } if (computerSelection == 'Rock' && playerSelection == 'Rock') {
         winnerText = 'It\'s a tie!';
     }
 
 
-    else if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
+    if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
         winnerText = 'You lose!';
     }
-    else if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
+    if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
         winnerText = 'You won, Congrats!';
-    } else if (computerSelection == 'Scissors' && playerSelection == 'Scissors') {
+    } if (computerSelection == 'Scissors' && playerSelection == 'Scissors') {
         winnerText = 'It\'s a tie!';
     }
 
     return winnerText;
 }
 
-console.log(playRound(playerSelection, computerSelection));
+// console.log(playRound(playerSelection, computerSelection));
 
 
 // Create function game() put playRound inside & play 5 times
@@ -78,29 +77,32 @@ console.log(playRound(playerSelection, computerSelection));
 let playerScore = 0;
 let computerScore = 0;
 let winner = '';
+let score = '';
 
-function game(winner) {
 
-    for (i = 0; i < 5; i++) {
+
+function getWinner(score) {
+    for (let i = 0; i < 5; i++) {
+        playRound(playerSelection, computerSelection);
         if (winnerText == 'You won, Congrats!') {
             playerScore++;
-            i++;
-        } else if (winnerText = 'You lose!') {
+            console.log(playerScore + 'Player wins');
+            console.log(computerScore);
+        } if (winnerText == 'You lose!') {
             computerScore++;
-            i++;
-        } else if (winnerText = 'It\'s a tie!') {
-            i++;
+            console.log(computerScore + 'Computer wins');
+            console.log(playerScore);
+
         }
     }
 
-
     if (playerScore > computerScore) {
-        winner = 'You are the winner!'
+        // score = 'You are the winner!'
+        score = console.log(playerScore);
     } else {
-        winner = 'Computer is the winner!'
+        // score = 'Computer has won!'
+        score = console.log(computerScore);
     }
-
-    return winner;
+    return score;
 }
-
-console.log(game(winner))
+console.log(getWinner(score));
