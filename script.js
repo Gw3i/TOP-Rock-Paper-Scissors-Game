@@ -26,7 +26,7 @@ function computerPlay() {
 // Compare two results
 // If result is: Player has Rock & Computer has Paper = console.log()Computer wins
 
-let playerSelection = prompt('Choose you weapon: ', 'Rock');
+let playerSelection = prompt('Choose your weapon: ', 'Rock');
 let computerSelection;
 let winnerText = '';
 
@@ -35,39 +35,39 @@ function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
 
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You lose!';
     }
     if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You won, Congrats!';
     } if (computerSelection == playerSelection) {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'It\'s a tie!';
     }
 
     if (computerSelection == 'Rock' && playerSelection == 'Scissors') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You lose!';
     }
     if (computerSelection == 'Rock' && playerSelection == 'Paper') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You won, Congrats!';
     } if (computerSelection == playerSelection) {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'It\'s a tie!';
     }
 
 
     if (computerSelection == 'Scissors' && playerSelection == 'Paper') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You lose!';
     }
     if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'You won, Congrats!';
     } if (computerSelection == playerSelection) {
-        playerSelection = prompt('Choose you weapon: ', 'Rock');
+        playerSelection = prompt('Choose your weapon: ', 'Rock');
         winnerText = 'It\'s a tie!';
     }
 
