@@ -1,11 +1,12 @@
 // Create function computerPlay which returns 'Rock', 'Paper', or 'Scissors'
 // Use console.log() to test if output is right
 function computerPlay() {
-    let result = Math.floor(Math.random() * 100) + 1;
-    if (result <= 33) {
+    let result = Math.floor(Math.random() * 3);
+
+    if (result == 0) {
         result = 'Rock';
     }
-    if (result > 34 && result <= 66) {
+    if (result > 0 && result < 2) {
         result = 'Paper'
     } else {
         result = 'Scissors';
@@ -26,11 +27,12 @@ function computerPlay() {
 // If result is: Player has Rock & Computer has Paper = console.log()Computer wins
 // 
 let playerSelection = prompt('Choose you weapon: ', 'Rock');
-let computerSelection = computerPlay();
+let computerSelection;
 let winnerText = '';
 
 
 function playRound(playerSelection, computerSelection) {
+    computerSelection = computerPlay();
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
         winnerText = 'You lose!';
     }
@@ -62,8 +64,6 @@ function playRound(playerSelection, computerSelection) {
     return winnerText;
 }
 
-// console.log(playRound(playerSelection, computerSelection));
-
 
 // Create function game() put playRound inside & play 5 times
 // Keep score and report a winner at the end
@@ -76,18 +76,18 @@ function playRound(playerSelection, computerSelection) {
 
 let playerScore = 0;
 let computerScore = 0;
-let oneRound = playRound(playerSelection, computerSelection);
 let score = '';
 
 
 function getWinner(score) {
     for (let i = 0; i < 5; i++) {
-        oneRound[i];
-        if (winnerText == 'You won, Congrats!') {
+        let oneRound = playRound(playerSelection, computerSelection);
+
+        if (oneRound == 'You won, Congrats!') {
             playerScore++;
             console.log(playerScore + 'Player wins');
             console.log(computerScore);
-        } if (winnerText == 'You lose!') {
+        } if (oneRound == 'You lose!') {
             computerScore++;
             console.log(computerScore + 'Computer wins');
             console.log(playerScore);
@@ -97,11 +97,9 @@ function getWinner(score) {
     }
 
     if (playerScore > computerScore) {
-        // score = 'You are the winner!'
-        score = console.log(playerScore);
+        score = 'You are the winner!'
     } else {
-        // score = 'Computer has won!'
-        score = console.log(computerScore);
+        score = 'Computer has won!'
     }
     return score;
 }
