@@ -25,7 +25,7 @@ function computerPlay() {
 // Run two parameters and compare with each other
 // Compare two results
 // If result is: Player has Rock & Computer has Paper = console.log()Computer wins
-// 
+
 let playerSelection = prompt('Choose you weapon: ', 'Rock');
 let computerSelection;
 let winnerText = '';
@@ -79,7 +79,7 @@ let computerScore = 0;
 let score = '';
 
 
-function getWinner(score) {
+function game(score) {
     for (let i = 0; i < 5; i++) {
         let oneRound = playRound(playerSelection, computerSelection);
 
@@ -103,4 +103,4 @@ function getWinner(score) {
     }
     return score;
 }
-console.log(getWinner(score));
+console.log(game(score));
