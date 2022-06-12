@@ -33,12 +33,13 @@ let winnerText = '';
 
 function playRound(playerSelection, computerSelection) {
     computerSelection = computerPlay();
+
     if (computerSelection == 'Paper' && playerSelection == 'Rock') {
         winnerText = 'You lose!';
     }
     if (computerSelection == 'Paper' && playerSelection == 'Scissors') {
         winnerText = 'You won, Congrats!';
-    } if (computerSelection == 'Paper' && playerSelection == 'Paper') {
+    } if (computerSelection == playerSelection) {
         winnerText = 'It\'s a tie!';
     }
 
@@ -47,7 +48,7 @@ function playRound(playerSelection, computerSelection) {
     }
     if (computerSelection == 'Rock' && playerSelection == 'Paper') {
         winnerText = 'You won, Congrats!';
-    } if (computerSelection == 'Rock' && playerSelection == 'Rock') {
+    } if (computerSelection == playerSelection) {
         winnerText = 'It\'s a tie!';
     }
 
@@ -57,9 +58,10 @@ function playRound(playerSelection, computerSelection) {
     }
     if (computerSelection == 'Scissors' && playerSelection == 'Rock') {
         winnerText = 'You won, Congrats!';
-    } if (computerSelection == 'Scissors' && playerSelection == 'Scissors') {
+    } if (computerSelection == playerSelection) {
         winnerText = 'It\'s a tie!';
     }
+
 
     return winnerText;
 }
@@ -91,7 +93,8 @@ function game(score) {
             computerScore++;
             console.log(computerScore + 'Computer wins');
             console.log(playerScore);
-
+        } if (oneRound == 'It\'s a tie!') {
+            console.log('It\'s a tie!');
         }
 
     }
