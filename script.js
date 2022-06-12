@@ -76,14 +76,13 @@ function playRound(playerSelection, computerSelection) {
 
 let playerScore = 0;
 let computerScore = 0;
-let winner = '';
+let oneRound = playRound(playerSelection, computerSelection);
 let score = '';
-
 
 
 function getWinner(score) {
     for (let i = 0; i < 5; i++) {
-        playRound(playerSelection, computerSelection);
+        oneRound[i];
         if (winnerText == 'You won, Congrats!') {
             playerScore++;
             console.log(playerScore + 'Player wins');
@@ -94,6 +93,7 @@ function getWinner(score) {
             console.log(playerScore);
 
         }
+
     }
 
     if (playerScore > computerScore) {
